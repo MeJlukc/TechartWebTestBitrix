@@ -1,14 +1,14 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <?
-$APPLICATION->SetTitle("1C-Битрикс: Управление сайтом");
+$APPLICATION->SetTitle("Галактический вестник");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галактический вестник</title>
+    <title><?$APPLICATION->showTitle()?></title>
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/styles.css">
     <?$APPLICATION->ShowHead();?>
 </head>

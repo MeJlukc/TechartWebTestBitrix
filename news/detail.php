@@ -1,8 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Детальная новость");
-$APPLICATION->SetTitle("detail");
-?><?echo "Я детальная страница!"; die();
+$APPLICATION->SetPageProperty("title", "Галактический вестник");
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
@@ -57,24 +56,4 @@ $APPLICATION->IncludeComponent(
 	)
 );
 
-// $APPLICATION->IncludeComponent(
-//     "bitrix:news.detail",
-//     "template1", // или ".default"
-//     Array(
-//         "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-//         "ELEMENT_ID" => $arResult["VARIABLES"]["ELEMENT_ID"],
-//         "ELEMENT_CODE" => $arResult["VARIABLES"]["ELEMENT_CODE"],
-//         "CHECK_DATES" => $arParams["CHECK_DATES"],
-//         "FIELD_CODE" => $arParams["DETAIL_FIELD_CODE"], // ВАЖНО: берем из index.php
-//         "PROPERTY_CODE" => $arParams["DETAIL_PROPERTY_CODE"],
-//         "IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],
-//         "DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
-//         "CACHE_TYPE" => $arParams["CACHE_TYPE"],
-//         "CACHE_TIME" => $arParams["CACHE_TIME"],
-//         "SET_TITLE" => $arParams["SET_TITLE"],
-//         "SET_CANONICAL_URL" => $arParams["DETAIL_SET_CANONICAL_URL"],
-//         "ACTIVE_DATE_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
-//     ),
-//     $component
-// );
-?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

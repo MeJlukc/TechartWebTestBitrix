@@ -26,7 +26,7 @@ $this->setFrameMode(true);
             <a class="button work-news__button" href="<?=$arResult["LIST_PAGE_URL"]?>">Назад к новостям</a>
         </div>
         <div class="work-news__media">
-            <img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" alt="News image" class="work-news__image">
+            <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="News image" class="work-news__image">
         </div>
     </div>
 </section>
