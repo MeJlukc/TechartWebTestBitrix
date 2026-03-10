@@ -8,14 +8,13 @@ $this->setFrameMode(true);
 
 if($arResult["NavPageCount"] <= 1) return;
 
-// Формируем базовый URL (путь + параметры, если есть)
+
 $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&amp;" : "");
 $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
 ?>
 
 <ul class="pagination__list">
-    
-    <?/* Ссылка "Назад" */?>
+
     <?if ($arResult["NavPageNomer"] > 1):?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--before" 
@@ -25,23 +24,39 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 		</li>
     <?endif;?>
 
-    <?/* Список номеров страниц */?>
-    <?while($arResult["nStartPage"] <= min(3, $arResult["nEndPage"])):?>
-        <?if ($arResult["nStartPage"] == $arResult["NavPageNomer"]):?>
-            <span class="pagination__link pagination__link--active"><?=$arResult["nStartPage"]?></span>
-        <?else:?>
-			<li class="pagination__item">
-				<a class="pagination__link"
-				href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?>">
-					<?=$arResult["nStartPage"]?>
-				</a>
-			</li>
-        <?endif;?>
-        <?$arResult["nStartPage"]++?>
-    <?endwhile;?>
 
-    <?/* Ссылка "Вперед" */?>
-    <?if($arResult["NavPageNomer"] < $arResult["NavPageCount"]):?>
+	<?
+	if ($arResult["NavPageCount"] < 3) {
+		$startPageValue = 1;
+		$endPageValue = $arResult["NavPageCount"];
+	} elseif (($arResult["NavPageCount"] - $arResult["NavPageNomer"]) < 2) {
+		$startPageValue = $arResult["NavPageCount"] - 2;
+		$endPageValue = $arResult["NavPageCount"];
+	} else {
+		$startPageValue = $arResult["NavPageNomer"];
+		$endPageValue = $startPageValue + 2;
+	}
+	?>
+
+	<?
+	for ($i = $startPageValue; $i <= $endPageValue; $i++):
+	?> 
+
+	<?if ($i == $arResult["NavPageNomer"]):?>
+		<span class="pagination__link pagination__link--active"><?=$i?></span>
+	<?else:?>
+		<li class="pagination__item">
+			<a class="pagination__link"
+			href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$i?>">
+				<?=$i?>
+			</a>
+		</li>
+	<?endif;?>
+
+	<?endfor;?>
+		
+
+    <?if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]):?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--next"
 			href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>">
