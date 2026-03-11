@@ -3,3 +3,5 @@
 /bitrix/stack_cache/*
 /bitrix/tmp/*
 /bitrix/html_pub/*
+/bitrix/modules/*.log
+*.log (в корне)
