@@ -1,9 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-/** @var array $arParams */
-/** @var array $arResult */
-/** @var CBitrixComponentTemplate $this */
-
 $this->setFrameMode(true);
 
 if($arResult["NavPageCount"] <= 1) return;
@@ -15,17 +11,17 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 
 <ul class="pagination__list">
 
-    <?if ($arResult["NavPageNomer"] > 1):?>
+    <?php if ($arResult["NavPageNomer"] > 1) { ?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--before" 
 			href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]-1)?>">
 				<span class="pagination__arrow pagination__arrow--before"></span>
 			</a>
 		</li>
-    <?endif;?>
+    <?php }?>
 
 
-	<?
+	<?php
 	if ($arResult["NavPageCount"] < 3) {
 		$startPageValue = 1;
 		$endPageValue = $arResult["NavPageCount"];
@@ -38,31 +34,25 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 	}
 	?>
 
-	<?
-	for ($i = $startPageValue; $i <= $endPageValue; $i++):
-	?> 
-
-	<?if ($i == $arResult["NavPageNomer"]):?>
-		<span class="pagination__link pagination__link--active"><?=$i?></span>
-	<?else:?>
-		<li class="pagination__item">
+	<?php
+	for ($i = $startPageValue; $i <= $endPageValue; $i++) {
+		if ($i == $arResult["NavPageNomer"]) { ?>
+			<span class="pagination__link pagination__link--active"><?=$i?></span>
+	<?php } else { ?>
 			<a class="pagination__link"
-			href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$i?>">
+				href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$i?>">
 				<?=$i?>
 			</a>
-		</li>
-	<?endif;?>
+	<?php };
+	} ?>
 
-	<?endfor;?>
-		
-
-    <?if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]):?>
+    <?php if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]) {?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--next"
 			href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>">
 				<span class="pagination__arrow pagination__arrow--next"></span>
 			</a>
 		</li>
-    <?endif;?>
+    <?php } ?>
 
 </ul>

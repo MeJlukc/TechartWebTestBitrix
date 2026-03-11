@@ -1,10 +1,6 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");
-$APPLICATION->SetPageProperty("title", "Галактический вестник");
-?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 
-<?
+<?php
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"bannerGalactic", 
@@ -73,9 +69,10 @@ $APPLICATION->IncludeComponent(
 		"FILE_404" => ""
 	),
 	false
-);?>
+);
+?>
 
-<?
+<?php
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"listGalactic", 
@@ -144,6 +141,7 @@ $APPLICATION->IncludeComponent(
 		"FILE_404" => ""
 	),
 	false
-);?>
+);
+?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,15 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-/** @var array $arParams */
-/** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
-/** @var string $templateName */
-/** @var string $templateFile */
-/** @var string $templateFolder */
-/** @var string $componentPath */
-/** @var CBitrixComponent $component */
+
 $this->setFrameMode(true);
 ?>
 
@@ -23,6 +13,11 @@ $this->setFrameMode(true);
             <p class="date"><?=$arResult["ACTIVE_FROM"]?></p>
             <h2 class="detail-news__announce"><?=$arResult["PREVIEW_TEXT"]?></h2>
             <span class="detail-news__content"><?=$arResult["DETAIL_TEXT"]?></span>
+            <div class="detail-news__categories">
+                <span class="detail-news__tags__title">Категории: </span>
+                <?php $tag = join(', ', $arResult["DISPLAY_PROPERTIES"]["NEWS_TAGS"]["DISPLAY_VALUE"]) ?>
+                <span class="detail-news__tags__content"><?=$tag?></span>
+            </div>
             <a class="button detail-news__button" href="<?=$arResult["LIST_PAGE_URL"]?>">Назад к новостям</a>
         </div>
         <div class="detail-news__media">

@@ -1,8 +1,7 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");
-$APPLICATION->SetPageProperty("title", "Галактический вестник");
-?><?$APPLICATION->IncludeComponent(
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+
+<?php
+$APPLICATION->IncludeComponent(
 	"bitrix:news.detail", 
 	"detailGalactic", 
 	array(
@@ -51,7 +50,7 @@ $APPLICATION->SetPageProperty("title", "Галактический вестни�
 		"PAGER_TITLE" => "Страница",
 		"PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "NEWS_TAGS",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
@@ -67,6 +66,7 @@ $APPLICATION->SetPageProperty("title", "Галактический вестни�
 		"COMPONENT_TEMPLATE" => "detailGalactic"
 	),
 	false
-);?>
+);
+?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
