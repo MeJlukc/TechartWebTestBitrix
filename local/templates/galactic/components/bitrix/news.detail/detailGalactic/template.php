@@ -14,9 +14,9 @@ $this->setFrameMode(true);
             <h2 class="detail-news__announce"><?=$arResult["PREVIEW_TEXT"]?></h2>
             <span class="detail-news__content"><?=$arResult["DETAIL_TEXT"]?></span>
             <div class="detail-news__categories">
-                <span class="detail-news__tags__title">Категории: </span>
-                <?php $tag = join(', ', $arResult["DISPLAY_PROPERTIES"]["NEWS_TAGS"]["DISPLAY_VALUE"]) ?>
-                <span class="detail-news__tags__content"><?=$tag?></span>
+                <span class="detail-news__categories__title">Категории: </span>
+                <?php $tag = join(', ', $arResult["DISPLAY_PROPERTIES"]["NEWS_CATEGORIES"]["DISPLAY_VALUE"]) ?>
+                <span class="detail-news__categories__content"><?=$tag?></span>
             </div>
             <a class="button detail-news__button" href="<?=$arResult["LIST_PAGE_URL"]?>">Назад к новостям</a>
         </div>

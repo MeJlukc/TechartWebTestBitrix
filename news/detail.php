@@ -50,7 +50,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_TITLE" => "Страница",
 		"PROPERTY_CODE" => array(
 			0 => "",
-			1 => "NEWS_TAGS",
+			1 => "NEWS_CATEGORIES",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",

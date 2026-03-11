@@ -421,8 +421,8 @@ body {
   aspect-ratio: 1;
 }
 
-.detail-news__tags__title,
-.detail-news__tags__content {
+.detail-news__categories__title,
+.detail-news__categories__content {
     font-size: var(--font-size-content);
     color: var(--color-purple);
 }

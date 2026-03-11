@@ -1,1 +1,0 @@
-<?php $filesInfo = ["/local/templates/galactic/components/bitrix/news.list/galacticTemplate/style.css" => "1773207101150",]; ?>
