@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/local/templates/galactic/styles.css" => "177321645913205",]; ?>

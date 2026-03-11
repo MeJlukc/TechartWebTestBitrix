@@ -1,0 +1,78 @@
+
+
+/* Start:/local/templates/galactic/components/bitrix/news.detail/detailGalactic/style.css?17732139571520*/
+.work-news {
+    padding-inline: var(--base-page-inline-indent);
+}
+
+.work-news__path {
+    font-size: var(--font-size-path);
+    margin-top: 72px;
+}
+
+.work-news__title {
+    margin-top: 22px;
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-title);
+    font-weight: 600;
+}
+
+.work-news__container {
+    display: flex;
+    margin-top: 63px;
+    margin-bottom: 135px;
+}
+
+.work-news__info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    row-gap: 40px;
+}
+
+.work-news__announce {
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    color: var(--color-brand);
+    line-height: var(--line-height-title);
+}
+
+.work-news__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+    font-size: var(--font-size-content);
+    line-height: var(--line-height-content);
+}
+
+.work-news__button {
+    height: 54px;
+    width: fit-content;
+}
+
+.work-news__button::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background: url('/local/templates/galactic/components/bitrix/news.detail/detailGalactic/./images//arrow-left-brand.svg') center/contain no-repeat;
+}
+
+.work-news__button:hover::before {
+    background: url('/local/templates/galactic/components/bitrix/news.detail/detailGalactic/./images//arrow-right-white.svg') center/contain no-repeat;
+    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
+    transform: scale(-1);
+}
+
+.work-news__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.work-news__image {
+  width: 90%;
+  aspect-ratio: 1;
+}
+/* End */
+/* /local/templates/galactic/components/bitrix/news.detail/detailGalactic/style.css?17732139571520 */
