@@ -20,7 +20,7 @@ $this->setFrameMode(true);
                 foreach ($arResult["DISPLAY_PROPERTIES"]["NEWS_CATEGORIES"]["LINK_ELEMENT_VALUE"] as $category) {
                     $categoryId = $category["ID"];
                     $categoryName = $category["NAME"];
-                    $res[] = "<a href=\"/news/?category=$categoryId\">$categoryName</a>";
+                    $res[] = "<a href=\"/news/search.php?category=$categoryId\">$categoryName</a>";
                 }
                 $categories = join(", ", $res);
                 ?>
