@@ -8,7 +8,7 @@ $this->setFrameMode(true);
     <p class="detail-news__path">
         <a class="detail-news__path__link" href="/news/">Главная</a> / <span class="text-color--grey"><?=$arResult["NAME"]?></span>
     </p>
-    <h1 class="detail-news__title"><?=$arResult["PREVIEW_TEXT"]?></h1>
+    <h1 class="detail-news__title"><?=$arResult["NAME"]?></h1>
     <div class="detail-news__container">
         <div class="detail-news__info">
             <p class="date"><?=$arResult["ACTIVE_FROM"]?></p>

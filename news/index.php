@@ -11,7 +11,7 @@ $arrFilter = [];
 if (isset($_GET['category'])) {
     $arrFilter['PROPERTY_NEWS_CATEGORIES'] = $_GET['category'];
 }
-
+	
 if (!empty($_GET['q'])) {
     $searchQuery = htmlspecialcharsEx($_GET['q']);
     $arrFilter[] = [

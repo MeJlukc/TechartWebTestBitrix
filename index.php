@@ -1,8 +1,13 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Галактический вестник")
+?>
 
 <section class="home-page__container">
     <h1 class="home-page__title">Новости</h1>
     <a href="/news/" class="button home-page__button">К новостям</a>
 </section>
 
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?php 
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
+?>
