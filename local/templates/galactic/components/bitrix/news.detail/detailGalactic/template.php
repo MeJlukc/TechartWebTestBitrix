@@ -3,6 +3,7 @@
 $this->setFrameMode(true);
 ?>
 
+
 <section class="detail-news">
     <p class="detail-news__path">
         <a class="detail-news__path__link" href="/news/">Главная</a> / <span class="text-color--grey"><?=$arResult["NAME"]?></span>
@@ -15,8 +16,15 @@ $this->setFrameMode(true);
             <span class="detail-news__content"><?=$arResult["DETAIL_TEXT"]?></span>
             <div class="detail-news__categories">
                 <span class="detail-news__categories__title">Категории: </span>
-                <?php $tag = join(', ', $arResult["DISPLAY_PROPERTIES"]["NEWS_CATEGORIES"]["DISPLAY_VALUE"]) ?>
-                <span class="detail-news__categories__content"><?=$tag?></span>
+                <?php
+                foreach ($arResult["DISPLAY_PROPERTIES"]["NEWS_CATEGORIES"]["LINK_ELEMENT_VALUE"] as $category) {
+                    $categoryId = $category["ID"];
+                    $categoryName = $category["NAME"];
+                    $res[] = "<a href=\"/news/?category=$categoryId\">$categoryName</a>";
+                }
+                $categories = join(", ", $res);
+                ?>
+                <span class="detail-news__categories__content"><?=$categories?></span>
             </div>
             <a class="button detail-news__button" href="<?=$arResult["LIST_PAGE_URL"]?>">Назад к новостям</a>
         </div>

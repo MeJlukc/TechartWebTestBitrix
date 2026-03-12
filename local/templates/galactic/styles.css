@@ -183,6 +183,7 @@ body {
 
 .footer {
     margin-inline: var(--base-page-inline-indent);
+    margin-top: 83px;
     padding-block: 80px;
     border-top: 1px solid var(--color-black);
     font-size: var(--font-size-footer);
@@ -292,7 +293,7 @@ body {
     justify-content: end;
     align-items: center;
     margin-inline: var(--base-page-inline-indent);
-    margin-block: 83px;
+    margin-top: 83px;
     column-gap: 16px;
 }
 
@@ -590,7 +591,7 @@ body {
     }
 
     .pagination__list {
-        margin-block: 40px;
+        margin-top: 40px;
         column-gap: 8px;
     }
 
@@ -654,5 +655,6 @@ body {
 
     .footer {
         padding-block: 20px;
+        margin-top: 40px;
     }
 }

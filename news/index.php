@@ -1,6 +1,14 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 
 <?php
+global $arrFilter;
+$arrFilter = [];
+
+if (isset($_GET['category']) && intval($_GET['category']) > 0) {
+    $arrFilter['PROPERTY_NEWS_CATEGORIES'] = intval($_GET['category']);
+    $arrFilter['INCLUDE_SUBSECTIONS'] = 'Y'; 
+}
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"bannerGalactic", 
@@ -46,10 +54,10 @@ $APPLICATION->IncludeComponent(
 		"CACHE_TIME" => "3600",
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
-		"DISPLAY_TOP_PAGER" => "Y",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
 		"PAGER_TITLE" => "Новости",
-		"PAGER_SHOW_ALWAYS" => "Y",
+		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => "myPagination",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -89,7 +97,7 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
-		"FILTER_NAME" => "",
+		"FILTER_NAME" => "arrFilter",
 		"FIELD_CODE" => array(
 			0 => "ID",
 			1 => "",
@@ -130,7 +138,9 @@ $APPLICATION->IncludeComponent(
 		"SET_STATUS_404" => "Y",
 		"SHOW_404" => "Y",
 		"MESSAGE_404" => "",
+		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_BASE_LINK" => "",
+		"PAGER_ID" => "list_nav",
 		"PAGER_PARAMS_NAME" => "arrPager",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
