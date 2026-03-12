@@ -13,7 +13,7 @@ $this->setFrameMode(true);
 					<p class="news-card__date date"><?=$arItem['ACTIVE_FROM']?></p>
 					<h2 class="news-card__title"><?=$arItem['NAME']?></h2>
 					<span class="news-card__text"><?=$arItem['PREVIEW_TEXT']?></span>
-					<a href="/news/detail.php?ID=<?=$arItem['ID']?>" class="button news-card__button">Подробнее</a>
+					<a href="/news/<?=$arItem['ID']?>/" class="button news-card__button">Подробнее</a>
 				</div>
 			<?php
 			}
@@ -27,8 +27,10 @@ $this->setFrameMode(true);
 		<?php } ?>
 	</section>
 
-<?php if($arParams["DISPLAY_BOTTOM_PAGER"]) {
+<?php
+if($arParams["DISPLAY_BOTTOM_PAGER"]) {
 	echo $arResult["NAV_STRING"];
-	  } ?>
+}
+?>
 
 </div>

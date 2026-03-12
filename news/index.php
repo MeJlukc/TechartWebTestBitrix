@@ -11,7 +11,7 @@ $arrFilter = [];
 if (isset($_GET['category'])) {
     $arrFilter['PROPERTY_NEWS_CATEGORIES'] = $_GET['category'];
 }
-	
+
 if (!empty($_GET['q'])) {
     $searchQuery = htmlspecialcharsEx($_GET['q']);
     $arrFilter[] = [
@@ -145,7 +145,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "Y",
-		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "Y",
 		"SET_STATUS_404" => "Y",
 		"SHOW_404" => "Y",
 		"MESSAGE_404" => "",
