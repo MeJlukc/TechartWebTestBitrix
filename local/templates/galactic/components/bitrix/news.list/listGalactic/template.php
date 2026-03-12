@@ -3,7 +3,7 @@ $this->setFrameMode(true);
 ?>
 
 	<section class="news">
-		<h1 class="news__title">Новости</h1>
+		<h1 class="news__title"><?=$arResult["TITLE"]?></h1>
 
 		<div class="news__list">
 			<?php
@@ -19,6 +19,12 @@ $this->setFrameMode(true);
 			}
 			?>
 		</div>
+		<?php if (empty($arResult["ITEMS"])) { ?>
+		<div class="no-news-found">
+			<h3 class="no-news-found__title">По вашему запросу ничего не найдено</h3>
+			<a class="button no-news-found__button" href="/news/">Сбросить фильтр</a>
+		</div>
+		<?php } ?>
 	</section>
 
 <?php if($arParams["DISPLAY_BOTTOM_PAGER"]) {
