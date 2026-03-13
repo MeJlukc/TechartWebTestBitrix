@@ -6,7 +6,7 @@ if($arResult["NavPageCount"] <= 1) return;
 
 $params = $_GET;
 foreach($params as $key => $value) {
-    if (strpos($key, 'PAGEN_') !== false) {
+    if (preg_match("/PAGEN_/", $key)) {
         unset($params[$key]);
     }
 }

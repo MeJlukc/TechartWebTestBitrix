@@ -27,7 +27,7 @@ $arUrlRewrite=array (
   3 => 
   array (
     'CONDITION' => '#^/news/page-([0-9]+)/#',
-    'RULE' => 'PAGEN_1=$1&$2',
+    'RULE' => 'PAGEN_1=$1',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
     'SORT' => 100,
