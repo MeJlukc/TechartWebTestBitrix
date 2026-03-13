@@ -159,6 +159,7 @@ body {
     padding-inline: var(--base-page-inline-indent);
     padding-block: 40px;
     border-bottom: 1px solid var(--color-black);
+    gap: 50px;
 }
 
 .header__container {
