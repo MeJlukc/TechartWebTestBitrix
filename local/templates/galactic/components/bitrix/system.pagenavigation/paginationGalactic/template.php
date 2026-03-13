@@ -10,7 +10,7 @@ if($arResult["NavPageCount"] <= 1) return;
     <?php if ($arResult["NavPageNomer"] > 1) { ?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--before" 
-			href="/news/page-<?=($arResult["NavPageNomer"]) - 1?>/<?=$arResult["QUERY_STRING"]?>">
+			href="<?=$arResult["BASE_PATH_CUSTOM"]?>page-<?=($arResult["NavPageNomer"]) - 1?>/<?=$arResult["QUERY_STRING_CUSTOM"]?>">
 				<span class="pagination__arrow pagination__arrow--before"></span>
 			</a>
 		</li>
@@ -36,7 +36,7 @@ if($arResult["NavPageCount"] <= 1) return;
 			<span class="pagination__link pagination__link--active"><?=$i?></span>
 	<?php } else { ?>
 			<a class="pagination__link"
-				href="/news/page-<?=$i?>/<?=$arResult["QUERY_STRING"]?>">
+				href="<?=$arResult["BASE_PATH_CUSTOM"]?>page-<?=$i?>/<?=$arResult["QUERY_STRING_CUSTOM"]?>">
 				<?=$i?>
 			</a>
 	<?php };
@@ -45,7 +45,7 @@ if($arResult["NavPageCount"] <= 1) return;
     <?php if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]) {?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--next"
-			href="/news/page-<?=($arResult["NavPageNomer"]) + 1?>/<?=$arResult["QUERY_STRING"]?>">
+			href="<?=$arResult["BASE_PATH_CUSTOM"]?>page-<?=($arResult["NavPageNomer"]) + 1?>/<?=$arResult["QUERY_STRING_CUSTOM"]?>">
 				<span class="pagination__arrow pagination__arrow--next"></span>
 			</a>
 		</li>

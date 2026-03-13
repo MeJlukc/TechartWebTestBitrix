@@ -18,9 +18,9 @@ $this->setFrameMode(true);
                 <span class="detail-news__categories__title">Категории: </span>
                 <?php
                 foreach ($arResult["DISPLAY_PROPERTIES"]["NEWS_CATEGORIES"]["LINK_ELEMENT_VALUE"] as $category) {
-                    $categoryId = $category["ID"];
+                    $categoryCode = $category["CODE"];
                     $categoryName = $category["NAME"];
-                    $res[] = "<a href=\"/news/?category=$categoryId\">$categoryName</a>";
+                    $res[] = "<a href=\"/news/category-$categoryCode/\">$categoryName</a>";
                 }
                 $categories = join(", ", $res);
                 ?>

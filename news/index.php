@@ -8,18 +8,21 @@ Loader::includeModule("iblock");
 global $arrFilter;
 $arrFilter = [];
 
-if (isset($_GET['category'])) {
-    $arrFilter['PROPERTY_NEWS_CATEGORIES'] = $_GET['category'];
-}
+if (isset($_REQUEST["SECTION_CODE"])) {
+    $resCategory = CIBlockElement::GetList(
+        [], 
+        [
+            "IBLOCK_ID" => 5, 
+            "CODE" => $_REQUEST["SECTION_CODE"], 
+            "ACTIVE" => "Y"
+        ], 
+        false, 
+        ["nTopCount" => 1], 
+        ["ID"]
+    );
 
-if (!empty($_GET['q'])) {
-    $searchQuery = htmlspecialcharsEx($_GET['q']);
-    $arrFilter[] = [
-        "LOGIC" => "OR",
-        ["%NAME" => $searchQuery],         
-        ["%PREVIEW_TEXT" => $searchQuery], 
-        ["%DETAIL_TEXT" => $searchQuery],  
-    ];
+    $arCategory = $resCategory->Fetch();
+    $arrFilter['PROPERTY_NEWS_CATEGORIES'] = $arCategory["ID"];
 }
 
 $APPLICATION->IncludeComponent(	
