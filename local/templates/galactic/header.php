@@ -19,16 +19,15 @@
             </p>
         </a>
         <nav class="main-nav">
-            <?$APPLICATION->IncludeComponent("bitrix:menu", "horizontal_multilevel1", Array(
-	"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-		"MAX_LEVEL" => "2",	// Уровень вложенности меню
-		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-		"DELAY" => "N",	// Откладывать выполнение шаблона меню
-		"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-	),
-	false
-);?>
+            <?php
+            $APPLICATION->IncludeComponent("bitrix:menu", "horizontal_multilevel1", Array(
+	            "ROOT_MENU_TYPE" => "top",
+		        "MAX_LEVEL" => "2",
+		        "CHILD_MENU_TYPE" => "left",
+	            ),
+	            false
+            );
+            ?>
         </nav>
     </header>
     

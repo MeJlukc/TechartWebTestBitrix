@@ -2,21 +2,21 @@
 $aMenuLinks = Array(
 	Array(
 		"Диагностика", 
-		"/services/diagnostics.php", 
+		"/services/diagnostics/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Ремонт", 
-		"/services/repair.php", 
+		"/services/repair/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Сервис", 
-		"/services/service.php", 
+		"/services/service/", 
 		Array(), 
 		Array(), 
 		"" 

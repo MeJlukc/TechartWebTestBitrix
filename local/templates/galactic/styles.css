@@ -121,7 +121,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
     padding-inline: 40px;
     gap: 10px;
     border: 2px solid var(--color-brand);
@@ -159,7 +158,7 @@ body {
     padding-inline: var(--base-page-inline-indent);
     padding-block: 40px;
     border-bottom: 1px solid var(--color-black);
-    gap: 50px;
+    gap: 100px;
 }
 
 .header__container {
@@ -269,6 +268,7 @@ body {
 }
 
 .news-card__button {
+    margin-top: auto;
     height: 54px;
     width: fit-content;
 }
@@ -487,6 +487,25 @@ body {
 
 .home-page__button {
     margin-top: 40px;
+    height: 54px;
+    width: fit-content;
+}
+
+/* =====================
+    Страница в разработке
+===================== */
+
+.page-in-develop {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-inline: var(--base-page-inline-indent);
+    gap: 30px;
+}
+
+.page-in-develop__button {
     height: 54px;
     width: fit-content;
 }
