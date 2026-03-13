@@ -3,15 +3,6 @@
 $this->setFrameMode(true);
 
 if($arResult["NavPageCount"] <= 1) return;
-
-$params = $_GET;
-foreach($params as $key => $value) {
-    if (preg_match("/PAGEN_/", $key)) {
-        unset($params[$key]);
-    }
-}
-
-$queryString = !empty($params) ? '?' . http_build_query($params) : "";
 ?>
 
 <ul class="pagination__list">
@@ -19,7 +10,7 @@ $queryString = !empty($params) ? '?' . http_build_query($params) : "";
     <?php if ($arResult["NavPageNomer"] > 1) { ?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--before" 
-			href="/news/page-<?=($arResult["NavPageNomer"]) - 1?>/<?=$queryString?>">
+			href="/news/page-<?=($arResult["NavPageNomer"]) - 1?>/<?=$arResult["QUERY_STRING"]?>">
 				<span class="pagination__arrow pagination__arrow--before"></span>
 			</a>
 		</li>
@@ -45,7 +36,7 @@ $queryString = !empty($params) ? '?' . http_build_query($params) : "";
 			<span class="pagination__link pagination__link--active"><?=$i?></span>
 	<?php } else { ?>
 			<a class="pagination__link"
-				href="/news/page-<?=$i?>/<?=$queryString?>">
+				href="/news/page-<?=$i?>/<?=$arResult["QUERY_STRING"]?>">
 				<?=$i?>
 			</a>
 	<?php };
@@ -54,7 +45,7 @@ $queryString = !empty($params) ? '?' . http_build_query($params) : "";
     <?php if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]) {?>
 		<li class="pagination__item">
 			<a class="pagination__link pagination__link--next"
-			href="/news/page-<?=($arResult["NavPageNomer"]) + 1?>/<?=$queryString?>">
+			href="/news/page-<?=($arResult["NavPageNomer"]) + 1?>/<?=$arResult["QUERY_STRING"]?>">
 				<span class="pagination__arrow pagination__arrow--next"></span>
 			</a>
 		</li>
