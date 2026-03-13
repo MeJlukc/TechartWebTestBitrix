@@ -3,7 +3,7 @@ $arUrlRewrite=array (
   0 => 
   array (
     'CONDITION' => '#^/news/category-([a-zA-Z0-9_-]+)/page-([0-9]+)#',
-    'RULE' => 'SECTION_CODE=$1&PAGEN_1=$2',
+    'RULE' => 'CATEGORY_CODE=$1&PAGEN_1=$2',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
     'SORT' => 100,
@@ -11,7 +11,7 @@ $arUrlRewrite=array (
   1 => 
   array (
     'CONDITION' => '#^/news/category-([a-zA-Z0-9_-]+)/#',
-    'RULE' => 'SECTION_CODE=$1',
+    'RULE' => 'CATEGORY_CODE=$1',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
     'SORT' => 100,
