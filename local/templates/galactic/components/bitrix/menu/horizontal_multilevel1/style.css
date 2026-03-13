@@ -77,10 +77,10 @@
 	display:none;
 	z-index:500;
 	background-color: #fff;
-
+	padding: 10px;
 	height:auto;
 	/*width:12em;*/
-	width:180px;
+	width:200px;
 
 }
 
@@ -168,8 +168,3 @@ div.menu-clear-left
 	clear:left;
 }
 
-/* .horizontal-multilevel-menu {
-	display: flex;
-	align-items: center;
-	gap: 15px;
-} */
