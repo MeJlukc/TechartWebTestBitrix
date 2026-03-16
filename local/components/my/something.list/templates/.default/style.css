@@ -1,0 +1,18 @@
+.my-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 60px 120px;
+}
+
+.my-list__item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    border-bottom: 1px solid #777;
+}
+
+.my-list__item__img {
+    width: 300px;
+}
