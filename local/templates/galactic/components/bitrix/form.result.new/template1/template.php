@@ -62,6 +62,7 @@ if ($arResult["isFormNote"] == "Y") {
 			$answerId = $arResult["QUESTIONS"]["QUESTION_THEME"]["STRUCTURE"][0]["ID"];
 			?>
 			<select name="form_text_<?=$answerId?>" id="form_text_QUESTION_THEME">
+				<option value="" selected>Выберите тему</option>
 				<?php
 				foreach ($arResult["CATEGORIES_LIST"] as $category) {
 				?>
@@ -74,7 +75,9 @@ if ($arResult["isFormNote"] == "Y") {
 	</div>
 
 	<div class="submit-group">
-		<input type="submit" name="web_form_submit" value="Отправить"></input>
+		<input 
+		class="button feedback-form__button"
+		type="submit" name="web_form_submit" value="Отправить"></input>
 	</div>
 
 </div>

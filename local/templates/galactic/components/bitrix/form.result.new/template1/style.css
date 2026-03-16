@@ -55,7 +55,11 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	padding: 30px;
 	gap: 30px;
+	border: 1px solid #777;
+	border-radius: 35px;
 }
 
 label {
@@ -71,11 +75,26 @@ label {
 	gap: 30px;
 }
 
+.feedback-form__button,
 .feedback-success__button {
 	height: 54px;
 	width: fit-content;
 }
 
+.feedback-form__button:hover {
+	cursor: pointer;
+}
+
 .star {
 	color: red;
+}
+
+input, select {
+	height: 30px;
+	width: 330px;
+}
+
+.feedback-form__button {
+	height: 54px;
+	width: auto;
 }
