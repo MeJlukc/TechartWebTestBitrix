@@ -4,14 +4,17 @@ $APPLICATION->SetTitle("Галактический вестник")
 ?>
 
 <?php
+global $arrFilter;
+// $arrFilter = ['ID' => 58];
+
 $APPLICATION->SetTitle("test");
 
 $APPLICATION->IncludeComponent(
-    "my:something.list",
+    "my:custom.list",
     "",
     Array(
         "IBLOCK_ID" => "1",
-        "FIELD_CODE" => Array(
+        "FIELD_CODE" => array(
             'ID', 
             'NAME', 
             'PREVIEW_TEXT', 
@@ -19,9 +22,14 @@ $APPLICATION->IncludeComponent(
             'ACTIVE_FROM',
             'DETAIL_TEXT',
         ),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "NEWS_CATEGORIES",
+		),
         "ITEMS_COUNT" => 4,
     )
-);?>
+);
+?>
 
 <?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
