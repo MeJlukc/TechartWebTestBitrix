@@ -6,7 +6,7 @@ use Bitrix\Main\Loader;
 
 Loader::includeModule("iblock");
 
-class UserCardComponent extends CBitrixComponent
+class CustomListComponent extends CBitrixComponent
 {
 
     public function onPrepareComponentParams($arParams)
@@ -23,21 +23,37 @@ class UserCardComponent extends CBitrixComponent
 
         $arParams['SORT_BY1'] ??= 'ACTIVE_FROM';
         $arParams['SORT_ORDER1'] ??= 'DESC';
+
+        $arParams["MESSAGE_404"] ??= '';
+        $arParams["SET_STATUS_404"] ??= 'Y';
+        $arParams["SHOW_404"] ??= 'Y';
+        $arParams["FILE_404"] ??= '';
+
+        $arParams["SET_TITLE"] ??= 'Y';
+
+        $arParams["ACTIVE_DATE_FORMAT"] ??= 'd.m.Y';
         
         return $arParams;
     }
 
+
     public function executeComponent()
     {
-        if ($this->startResultCache())
+        if ($this->startResultCache(false, [$this->getFilter()])) 
         {
-            $this->initResult();
+            $this->initResult(); 
             
-            if (empty($this->arResult))
+            if (empty($this->arResult['ITEMS']))
             {
                 $this->abortResultCache();
-                ShowError('Информация не найдена');
-                
+                Iblock\Component\Tools::process404(
+                    trim($arParams["MESSAGE_404"]) ?: GetMessage("T_NEWS_NEWS_NA")
+                    ,true
+                    ,$arParams["SET_STATUS_404"] === "Y"
+                    ,$arParams["SHOW_404"] === "Y"
+                    ,$arParams["FILE_404"]
+                );
+
                 return;
             }
             
@@ -45,7 +61,7 @@ class UserCardComponent extends CBitrixComponent
         }
     }
 
-    private function getFilter(): array
+    private function getFilter()
     {
         $filter = [
             'IBLOCK_ID' => $this->arParams['IBLOCK_ID'],
@@ -67,6 +83,7 @@ class UserCardComponent extends CBitrixComponent
     {
         $fieldsDefault = Array(
             'ID', 
+            'IBLOCK_ID',
             'NAME',
             'ACTIVE', 
             'PREVIEW_TEXT', 
@@ -100,9 +117,17 @@ class UserCardComponent extends CBitrixComponent
             $this->getFilter(),
             false,
             [
-                'nTopCount' => $this->arParams['ITEMS_COUNT'],
+                'nPageSize' => $this->arParams['ITEMS_COUNT'],
+                'bSaveSession' => false,
             ],
             $this->getFields(),
+        );
+
+        $this->arResult["NAV_STRING"] = $elements->GetPageNavStringEx(
+            $navComponentObject, 
+            "",
+            "",
+            false 
         );
 
         while ($obElement = $elements->getNextElement())
@@ -111,6 +136,14 @@ class UserCardComponent extends CBitrixComponent
 
             $item['PROPERTIES'] = $obElement->GetProperties();
 
+            $item["PREVIEW_PICTURE"] = CFile::GetFileArray($item["PREVIEW_PICTURE"]);
+            $item["DETAIL_PICTURE"] = CFile::GetFileArray($item["DETAIL_PICTURE"]);
+            
+            $item["DISPLAY_ACTIVE_FROM"] = CIBlockFormatProperties::DateFormat(
+                $this->arParams["ACTIVE_DATE_FORMAT"], 
+                MakeTimeStamp($item["ACTIVE_FROM"], CSite::GetDateFormat("FULL"))
+            );
+
             $items[] = $item;
         }
 
@@ -118,11 +151,13 @@ class UserCardComponent extends CBitrixComponent
         {
             return;
         }
-
-        $this->arResult = [
-            'ITEMS' => $items,
-        ];
         
+        if ($this->arParams['SET_TITLE'] === 'Y')
+        {
+            $this->arResult['NAME'] = "Cписок";
+        }
+
+        $this->arResult['ITEMS'] = $items;
     }
 }
 ?>
