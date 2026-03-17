@@ -36,7 +36,6 @@ class CustomListComponent extends CBitrixComponent
         return $arParams;
     }
 
-
     public function executeComponent()
     {
         if ($this->startResultCache(false, [$this->getFilter()])) 
@@ -47,11 +46,11 @@ class CustomListComponent extends CBitrixComponent
             {
                 $this->abortResultCache();
                 Iblock\Component\Tools::process404(
-                    trim($arParams["MESSAGE_404"]) ?: GetMessage("T_NEWS_NEWS_NA")
+                    trim($this->arParams["MESSAGE_404"]) ?: GetMessage("T_NEWS_NEWS_NA")
                     ,true
-                    ,$arParams["SET_STATUS_404"] === "Y"
-                    ,$arParams["SHOW_404"] === "Y"
-                    ,$arParams["FILE_404"]
+                    ,$this->arParams["SET_STATUS_404"] === "Y"
+                    ,$this->arParams["SHOW_404"] === "Y"
+                    ,$this->arParams["FILE_404"]
                 );
 
                 return;
@@ -93,22 +92,22 @@ class CustomListComponent extends CBitrixComponent
             'DETAIL_PICTURE',
         );
 
-        if (!empty($this->arParams['FIELD_CODE']))
+        if (!empty($this->arParams['FIELD_CODE']) && is_array($this->arParams['FIELD_CODE']))
         {
-            $fields = array_merge($fieldsDefault, $this->arParams['FIELD_CODE']);
+            return array_unique(array_merge($fieldsDefault, $this->arParams['FIELD_CODE']));
         }
 
-        return $fields;
+        return $fieldsDefault;
     }
 
-    private function getSort(): array
+    private function getSort()
     {
         return [
             $this->arParams['SORT_BY1'] => $this->arParams['SORT_ORDER1']
         ];
     }
 
-    private function initResult(): void
+    private function initResult()
     {
         $items = [];
 
@@ -150,11 +149,6 @@ class CustomListComponent extends CBitrixComponent
         if (empty($items))
         {
             return;
-        }
-        
-        if ($this->arParams['SET_TITLE'] === 'Y')
-        {
-            $this->arResult['NAME'] = "Cписок";
         }
 
         $this->arResult['ITEMS'] = $items;

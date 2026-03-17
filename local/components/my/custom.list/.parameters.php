@@ -26,7 +26,7 @@ while ($arRes = $dbIBlock->Fetch()) {
 
 $arSorts = [
     "ASC" => "По возрастанию",
-    "DESC" => "По убыванию",
+    "DESC" => "По убыванию",    
 ];
 
 

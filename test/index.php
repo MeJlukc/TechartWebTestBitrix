@@ -2,14 +2,21 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("");
 $APPLICATION->SetTitle("Галактический вестник")
-?><?php
+?>
+
+<?php
 global $arrFilter;
 // $arrFilter = ['ID' => 58];
-?><?$APPLICATION->IncludeComponent(
+?>
+
+<?php
+$APPLICATION->IncludeComponent(
 	"my:custom.list",
 	"",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "N",
 		"FIELD_CODE" => array("",""),
 		"FILE_404" => "/404.php",
 		"FILTER_NAME" => "",
@@ -22,6 +29,9 @@ global $arrFilter;
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC"
 	)
-);?><?php 
+);
+?>
+
+<?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 ?>
