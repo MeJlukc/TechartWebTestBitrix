@@ -446,6 +446,21 @@ body {
     color: var(--color-purple);
 }
 
+.non-auth-user {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    margin-block: 100px;
+    gap: 30px;
+}
+
+.non-auth-user__button {
+    height: 54px;
+    width: fit-content;
+    margin-top: 60px;
+}
+
 /* =====================
     Страница 404
 ===================== */

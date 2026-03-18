@@ -25,6 +25,10 @@ if (isset($_GET["CATEGORY_CODE"])) {
 	$arrFilter['PROPERTY_NEWS_CATEGORIES'] = $arCategory["ID"];
 }
 
+if (!$USER->IsAuthorized()) {
+    $arrFilter["PROPERTY_ONLY_AUTH_VALUE"] = false; 
+}
+
 $APPLICATION->IncludeComponent(	
 	"bitrix:news.list", 
 	"bannerGalactic", 
@@ -117,7 +121,7 @@ $APPLICATION->IncludeComponent(
 			1 => "",
 		),
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "ONLY_AUTH",
 			1 => "DESCRIPTION",
 			2 => "",
 		),

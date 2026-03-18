@@ -1,5 +1,7 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Наше руководство");
+$APPLICATION->SetTitle("");
 ?>
 
 <section class="page-in-develop">

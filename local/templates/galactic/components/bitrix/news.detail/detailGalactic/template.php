@@ -3,6 +3,15 @@
 $this->setFrameMode(true);
 ?>
 
+<?php
+if ($arResult['PROPERTIES']['ONLY_AUTH']['VALUE_XML_ID'] == 'Y' && !$USER->IsAuthorized()) { ?>
+    <div class="non-auth-user">
+        <h2 class="non-auth-user__title">Вы не авторизованы</h2>
+        <p class="non-auth-user__text">Авторизуйтесь, чтобы получить доступ к этой странице.</p>
+        <a href="/" class="button non-auth-user__button">На главную</a>
+    </div>
+<?php
+} else { ?>
 
 <section class="detail-news">
     <p class="detail-news__path">
@@ -33,3 +42,6 @@ $this->setFrameMode(true);
         </div>
     </div>
 </section>
+
+<?php
+} ?>    
