@@ -155,6 +155,7 @@ body {
 
 .header {
     display: flex;
+    justify-content: space-between;
     padding-inline: var(--base-page-inline-indent);
     padding-block: 40px;
     border-bottom: 1px solid var(--color-black);

@@ -30,5 +30,15 @@
             );
             ?>
         </nav>
+        <?php
+        $APPLICATION->IncludeComponent("bitrix:system.auth.form", "template1", Array(
+        "FORGOT_PASSWORD_URL" => "",
+            "PROFILE_URL" => "",
+            "REGISTER_URL" => "",
+            "SHOW_ERRORS" => "Y",
+        ),
+        false
+        );
+        ?>
     </header>
     

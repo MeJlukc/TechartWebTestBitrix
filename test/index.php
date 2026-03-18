@@ -2,36 +2,19 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("");
 $APPLICATION->SetTitle("Галактический вестник")
-?>
-
-<?php
-global $arrFilter;
-// $arrFilter = ['ID' => 58];
-?>
-
-<?php
-$APPLICATION->IncludeComponent(
-	"my:custom.list",
-	"",
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "N",
-		"FIELD_CODE" => array("",""),
-		"FILE_404" => "/404.php",
-		"FILTER_NAME" => "",
-		"IBLOCK_ID" => $_REQUEST["ID"],
-		"IBLOCK_TYPE" => "news",
-		"ITEMS_COUNT" => "4",
-		"PROPERTY_CODE" => array("",""),
-		"SET_TITLE" => "Y",
-		"SHOW_404" => "Y",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_ORDER1" => "DESC"
-	)
-);
-?>
-
-<?php 
+?><?$APPLICATION->IncludeComponent("bitrix:system.auth.form", "template1", Array(
+	"FORGOT_PASSWORD_URL" => "",	// Страница забытого пароля
+		"PROFILE_URL" => "",	// Страница профиля
+		"REGISTER_URL" => "",	// Страница регистрации
+		"SHOW_ERRORS" => "N",	// Показывать ошибки
+	),
+	false
+);?><?$APPLICATION->IncludeComponent("bitrix:main.auth.form", "template1", Array(
+	"AUTH_FORGOT_PASSWORD_URL" => "",	// Страница для восстановления пароля
+		"AUTH_REGISTER_URL" => "",	// Страница для регистрации
+		"AUTH_SUCCESS_URL" => "",	// Страница после успешной авторизации
+	),
+	false
+);?><?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 ?>
