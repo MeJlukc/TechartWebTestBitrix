@@ -1,0 +1,10 @@
+@use "mixins" as *;
+
+@mixin site-fonts() {
+	// Подключайте тут все используемые шрифты,
+	// ниже представлен пример использования миксина, не рекомендую его править (лучше скопировать строчку)
+	// @include font-face($name: "Open Sans", $path: "normal-italic", $weight: normal, $style: italic, $woff2: true);
+	@include font-face($name: "Open Sans", $path: "font/OpenSans-Regular.ttf", $weight: 400, $style: normal, $woff2: false);
+	@include font-face($name: "Open Sans", $path: "font/OpenSans-SemiBold.ttf", $weight: 600, $style: normal, $woff2: false);
+	@include font-face($name: "Segoe UD", $path: "font/SegoeUI-Regular.ttf", $weight: 400, $style: normal, $woff2: false);
+}

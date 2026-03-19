@@ -1,4 +1,8 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+
+\TAO::frontendCss('index');
+\TAO::frontendJs('index');
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -11,34 +15,34 @@
 </head>
 <body>
     <div id="panel"><?$APPLICATION->ShowPanel();?></div>
-    <header class="header">
-        <a href="/" class="header__container header__link">
-            <img src="<?=SITE_TEMPLATE_PATH?>/images/logo.svg" alt="Logo" class="header__logo">
-            <p class="header__title">Галактический<br>
-                вестник
-            </p>
-        </a>
-        <nav class="main-nav">
-            <?php
-            $APPLICATION->IncludeComponent("bitrix:menu", "horizontal_multilevel1", Array(
-	            "ROOT_MENU_TYPE" => "top",
-		        "MAX_LEVEL" => "2",
-		        "CHILD_MENU_TYPE" => "left",
-		        "USE_EXT" => "Y",		
-	            ),
-	            false
-            );
-            ?>
-        </nav>
-        <?php
-        $APPLICATION->IncludeComponent("bitrix:system.auth.form", "template1", Array(
-        "FORGOT_PASSWORD_URL" => "",
-            "PROFILE_URL" => "",
-            "REGISTER_URL" => "",
-            "SHOW_ERRORS" => "Y",
+    
+    <?php
+    ob_start();
+    $APPLICATION->IncludeComponent("bitrix:menu", "horizontal_multilevel1", Array(
+        "ROOT_MENU_TYPE" => "top",
+        "MAX_LEVEL" => "2",
+        "CHILD_MENU_TYPE" => "left",
+        "USE_EXT" => "Y",		
         ),
         false
-        );
-        ?>
-    </header>
-    
+    );
+    $menu = ob_get_clean();
+
+    ob_start();
+    $APPLICATION->IncludeComponent("bitrix:system.auth.form", "template1", Array(
+    "FORGOT_PASSWORD_URL" => "",
+        "PROFILE_URL" => "",
+        "REGISTER_URL" => "",
+        "SHOW_ERRORS" => "Y",
+    ),
+    false
+    );
+    $auth = ob_get_clean();
+    ?>
+
+    <?=
+    \TAO::frontend()->renderBlock(
+        'common/header',
+        ["menu" => $menu, "auth" => $auth]
+    )
+    ?>

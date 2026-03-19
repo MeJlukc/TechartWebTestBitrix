@@ -1,0 +1,27 @@
+@use "style" as *;
+
+$block-name: "b-header";
+
+.#{$block-name} {
+	display: flex;
+	justify-content: space-between;
+    padding-inline: 200px;
+    padding-block: 40px;
+    border-bottom: 1px solid $color-black;
+    gap: 100px;
+
+	&__logo {
+		display: flex;
+    	column-gap: 25px;
+
+		&__title {
+			font-size: 28px;
+			font-family: "Segoe UI", sans-serif;
+			font-weight: 400;
+			color: $color-purple;
+			text-transform: uppercase;
+			letter-spacing: 0.125em;
+			line-height: 132%;
+		}
+	}
+}
