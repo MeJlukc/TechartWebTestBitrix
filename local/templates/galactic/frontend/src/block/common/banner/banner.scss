@@ -1,0 +1,26 @@
+@use "style" as *;
+
+$block-name: "b-banner";
+
+.#{$block-name} {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 30px;
+	padding-inline: $base-page-inline-indent;
+	height: 646px;
+	width: 100%;
+	background: center/100% no-repeat;
+	color: $color-white;
+
+	&__title {
+		font-size: $font-size-h1;
+		font-weight: 600;
+		line-height: $line-height-title;
+	}
+
+	&__text {
+		font-size: $font-size-content-xl;
+		line-height: $line-height-content;
+	}
+}

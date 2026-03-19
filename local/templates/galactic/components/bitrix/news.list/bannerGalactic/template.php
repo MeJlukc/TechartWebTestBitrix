@@ -2,9 +2,14 @@
 
 $this->setFrameMode(true);
 ?>
-	<?$lastNews = $arResult["ITEMS"][0]?>
-	<section class="last-news"
-		style="background: url('<?=$lastNews['PREVIEW_PICTURE']["SRC"]?>') center/100% no-repeat">
-		<h1 class="last-news__title"><?=$lastNews['NAME']?></h1>
-		<span class="last-news__text"><?=$lastNews['PREVIEW_TEXT']?></span>
-	</section>
+
+<?=
+\TAO::frontend()->renderBlock(
+'common/banner',
+[
+'title' => $arResult["BANNER_INFO"]['TITLE'],
+'text' => $arResult["BANNER_INFO"]['TEXT'],
+'background' => $arResult["ITEMS"][0]['PREVIEW_PICTURE']["SRC"],
+]
+)
+?>

@@ -233,7 +233,7 @@ body {
     news_list / Новости на главной странице
 ===================== */
 
-.news__title {
+/* .news__title {
     padding-block: 55px;
     font-size: var(--font-size-h1);
 }
@@ -298,7 +298,7 @@ body {
 .no-news-found__button {
     height: 54px;
     width: fit-content;
-}
+} */
 
 /* =====================
     Pagination / Пагинация
