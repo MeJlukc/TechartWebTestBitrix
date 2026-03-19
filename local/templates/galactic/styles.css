@@ -233,9 +233,6 @@ body {
     news_list / Новости на главной странице
 ===================== */
 
-.news {
-    margin-inline: var(--base-page-inline-indent);
-}
 .news__title {
     padding-block: 55px;
     font-size: var(--font-size-h1);
@@ -244,6 +241,7 @@ body {
 .news__list {
     display: flex;
     justify-content: space-between;
+    margin-inline: var(--base-page-inline-indent);
     column-gap: 40px;
     row-gap: 80px;
     flex-wrap: wrap;

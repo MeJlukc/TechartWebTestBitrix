@@ -19,12 +19,12 @@ $block-name: "b-menu";
 
 		&--active {
 			font-weight: bold;
-			color: $color-pink;
+			color: $color-brand;
 		}
 	}
 
 	&__item:hover {
-		color: $color-pink;
+		color: $color-brand;
 	}
 
 	&__item:hover .#{$block-name}__sub-list,
@@ -48,11 +48,11 @@ $block-name: "b-menu";
 
 		&--active {
 			font-weight: normal;
-			color: $color-pink;
+			color: $color-brand;
 		}
 	}
 
 	&__sub-item:hover {
-		color: $color-pink;
+		color: $color-brand;
 	}
 }

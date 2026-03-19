@@ -1,0 +1,52 @@
+@use "style" as *;
+
+$block-name: "b-card";
+
+.#{$block-name} {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	height: auto;
+	width: 48%;
+
+	&__date {
+		@include date;
+	}
+
+	&__title {
+		font-size: $font-size-h2;
+		font-weight: 600;
+		line-height: $line-height-title;
+	}
+
+	&__text {
+		font-size: $font-size-content;
+		line-height: $line-height-content;
+	}
+
+	&__link-button {
+		@include button;
+
+		margin-top: auto;
+		height: 54px;
+		width: fit-content;
+
+		&::after {
+			content: "";
+			width: 25px;
+			height: 25px;
+			background: url("/local/templates/galactic/images/arrow-right-brand.svg") center/contain no-repeat;
+			transition: 0.3s;
+		}
+
+		&:hover {
+			border-color: $color-brand-border;
+			background-color: $color-brand;
+			color: $color-white;
+		}
+
+		&:hover::after {
+			background: url("/local/templates/galactic/images/arrow-right-white.svg") center/contain no-repeat;
+		}
+	}
+}

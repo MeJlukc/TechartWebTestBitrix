@@ -1,3 +1,32 @@
 @use "config" as *;
 
 // Складируйте сюда все миксины, используемые на сайте
+@mixin button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-inline: 40px;
+	gap: 10px;
+	border: 2px solid $color-brand;
+	border-radius: 30px;
+	color: $color-brand;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: $font-size-button;
+	font-weight: 600;
+	background-color: $color-white;
+	transition: 0.3s;
+}
+
+@mixin date {
+	display: flex;
+	align-items: center;
+	height: 34px;
+	width: fit-content;
+	padding-inline: 18px;
+	padding-block: 6px;
+	font-size: $font-size-date;
+	color: $color-gray;
+	background-color: $color-gray-light;
+	border-radius: 20px;
+}

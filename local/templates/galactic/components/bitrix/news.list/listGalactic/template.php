@@ -16,12 +16,17 @@ $this->setFrameMode(true);
 			<?php
 			foreach ($arResult["ITEMS"] as $arItem) {
 			?>
-				<div class="news-card">
-					<p class="news-card__date date"><?=$arItem['ACTIVE_FROM']?></p>
-					<h2 class="news-card__title"><?=$arItem['NAME']?></h2>
-					<span class="news-card__text"><?=$arItem['PREVIEW_TEXT']?></span>
-					<a href="/news/<?=$arItem['ID']?>/" class="button news-card__button">Подробнее</a>
-				</div>
+				<?=
+				\TAO::frontend()->renderBlock(
+					'common/card',
+					[
+						'date' => $arItem['ACTIVE_FROM'],
+					 	'title' => $arItem['NAME'],
+						'text' => $arItem['PREVIEW_TEXT'],
+						'link' => $arItem['ID']
+					]
+				)
+				?>
 			<?php
 			}
 			?>

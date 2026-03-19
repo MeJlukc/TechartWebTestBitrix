@@ -1,14 +1,29 @@
 // Пользовательские переменные
+$font-size-header: 1.75rem;
+$font-size-footer: 1.25rem;
+$font-size-h1: 4rem;
+$font-size-h2: 2rem;
+$font-size-content: 1.25rem;
+$font-size-content-xl: 2rem;
+$font-size-date: 1rem;
+$font-size-path: 1rem;
+$font-size-button: 1rem;
+
+$base-page-inline-indent: 10.42vw;
+
+$line-height-title: 140%;
+$line-height-content: 160%;
 
 // Цвета, используемые на сайте (по возможности желательно придерживаться этого формата)
 $color-white: #fefefe;
 $color-black: #0a0a0a;
-$color-gray: #cacaca;
-$color-gray-light: #e6e6e6;
+$color-gray: #6c6e7b;
+$color-gray-light: #ecf2f5;
 $color-gray-dark: #8a8a8a;
 
-$color-purple: #2c145e;
-$color-pink: #841844;
+$color-brand: #841844;
+$color-brand-border: #9b407a;
+$color-purple: #2b145e;
 
 // Основные параметры body (если не используете, удаляйте)
 $body-background: $color-white;
@@ -34,6 +49,3 @@ $grid-gutter: (
 	large: 20px,
 	xlarge: 20px,
 );
-
-$font-size-header: 28px;
-$base-page-inline-indent: 10.42vw;
