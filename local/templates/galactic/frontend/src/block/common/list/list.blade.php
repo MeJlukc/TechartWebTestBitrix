@@ -1,21 +1,34 @@
-<div class="{{ $block }}">
     @if (!empty($arResult['ITEMS']))
-        @foreach ($arResult['ITEMS'] as $arItem)
+        <div class="{{ $block }}">
+            @foreach ($arResult['CUSTOM_ITEMS'] as $arItem)
 
-            @php
-            echo \TAO::frontend()->renderBlock(
-                'common/card',
-                [
-                    'date' => $arItem['ACTIVE_FROM'],
-                    'title' => $arItem['NAME'],
-                    'text' => $arItem['PREVIEW_TEXT'],
-                    'link' => $arItem['ID']
-                ]
-            )
-            @endphp
+                @php
+                echo \TAO::frontend()->renderBlock(
+                    'common/card',
+                    [
+                        'date' => $arItem['DATE'],
+                        'title' => $arItem['TITLE'],
+                        'text' => $arItem['TEXT'],
+                        'link' => $arItem['DETAIL_PAGE_LINK']
+                    ]
+                )
+                @endphp
 
-        @endforeach
+            @endforeach
+        </div>
     @else
-        <div>empty</div>
+        <div class="{{ $block->elem('empty') }}">
+            <h2 class="{{ $block->elem('empty__title') }}">
+                По вашему запросу ничего не найдено
+            </h2>
+            <p class="{{ $block->elem('empty__text') }}">
+                Попробуйте изменить фильтры запроса или вернитесь на главную.
+            </p>
+            <a
+            class="{{ $block->elem('empty__button') }}"
+            href="/"
+            >
+                На главную
+            </a>
+        </div>
     @endif
-</div>

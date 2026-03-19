@@ -8,4 +8,25 @@ $block-name: "b-list";
 	margin-inline: $base-page-inline-indent;
 	gap: 80px 40px;
 	flex-wrap: wrap;
+
+	&__empty {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+
+		&__button {
+			@include button;
+
+			height: 54px;
+			width: fit-content;
+			transition: 0.3s;
+
+			&:hover {
+				background-color: $color-brand;
+				color: $color-white;
+			}
+		}
+	}
 }
