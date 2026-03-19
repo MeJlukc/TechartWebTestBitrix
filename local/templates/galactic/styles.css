@@ -153,7 +153,7 @@ body {
     header
 ===================== */
 
-.header {
+/* .header {
     display: flex;
     justify-content: space-between;
     padding-inline: var(--base-page-inline-indent);
@@ -175,20 +175,20 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.125em;
     line-height: 132%;
-}
+} */
 
 
 /* =====================
     footer
 ===================== */
 
-.footer {
+/* .footer {
     margin-inline: var(--base-page-inline-indent);
     margin-top: 83px;
     padding-block: 80px;
     border-top: 1px solid var(--color-black);
     font-size: var(--font-size-footer);
-}
+} */
 
 
 /* =====================

@@ -5,14 +5,14 @@ $block-name: "b-header";
 .#{$block-name} {
 	display: flex;
 	justify-content: space-between;
-    padding-inline: 200px;
-    padding-block: 40px;
-    border-bottom: 1px solid $color-black;
-    gap: 100px;
+	padding-inline: 200px;
+	padding-block: 40px;
+	border-bottom: 1px solid $color-black;
+	gap: 100px;
 
 	&__logo {
 		display: flex;
-    	column-gap: 25px;
+		column-gap: 25px;
 
 		&__title {
 			font-size: 28px;
