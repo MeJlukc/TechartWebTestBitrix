@@ -436,5 +436,13 @@ img {
 .b-menu__sub-item:hover {
   color: #841844;
 }
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/title/title.scss ***!
+  \**************************************************************************************************************************************************************************************************/
+.b-title {
+  margin-inline: 10.42vw;
+  padding-block: 55px;
+  font-size: 4rem;
+}
 
 /*# sourceMappingURL=index.1773900531313.css.map*/

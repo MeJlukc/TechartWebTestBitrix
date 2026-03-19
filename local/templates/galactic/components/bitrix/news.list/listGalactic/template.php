@@ -3,7 +3,14 @@ $this->setFrameMode(true);
 ?>
 
 	<section class="news">
-		<h1 class="news__title"><?=$arResult["TITLE"]?></h1>
+		<?=
+		\TAO::frontend()->renderBlock(
+		'common/title',
+		[
+		'title' => $arResult['TITLE'],
+		]
+		)
+		?>
 
 		<div class="news__list">
 			<?php

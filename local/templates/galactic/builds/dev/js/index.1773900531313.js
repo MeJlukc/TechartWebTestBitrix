@@ -62,6 +62,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
+/***/ "./src/block/common/title/title.scss"
+/*!*******************************************!*\
+  !*** ./src/block/common/title/title.scss ***!
+  \*******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+
+/***/ },
+
 /***/ "./src/style/layout/base.scss"
 /*!************************************!*\
   !*** ./src/style/layout/base.scss ***!
@@ -87,7 +103,8 @@ __webpack_require__.r(__webpack_exports__);
 var map = {
 	"./footer/footer.scss": "./src/block/common/footer/footer.scss",
 	"./header/header.scss": "./src/block/common/header/header.scss",
-	"./menu/menu.scss": "./src/block/common/menu/menu.scss"
+	"./menu/menu.scss": "./src/block/common/menu/menu.scss",
+	"./title/title.scss": "./src/block/common/title/title.scss"
 };
 
 

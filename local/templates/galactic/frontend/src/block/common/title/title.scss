@@ -1,0 +1,9 @@
+@use "style" as *;
+
+$block-name: "b-title";
+
+.#{$block-name} {
+	margin-inline: $base-page-inline-indent;
+	padding-block: 55px;
+	font-size: 4rem;
+}
