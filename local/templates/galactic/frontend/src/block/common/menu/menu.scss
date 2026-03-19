@@ -21,10 +21,10 @@ $block-name: "b-menu";
 			font-weight: bold;
 			color: $color-brand;
 		}
-	}
 
-	&__item:hover {
-		color: $color-brand;
+		&:hover {
+			color: $color-brand;
+		}
 	}
 
 	&__item:hover .#{$block-name}__sub-list,
@@ -50,9 +50,9 @@ $block-name: "b-menu";
 			font-weight: normal;
 			color: $color-brand;
 		}
-	}
 
-	&__sub-item:hover {
-		color: $color-brand;
+		&:hover {
+			color: $color-brand;
+		}
 	}
 }
