@@ -1,0 +1,58 @@
+@use "style" as *;
+
+$block-name: "b-menu";
+
+.#{$block-name} {
+	&__list {
+		display: flex;
+		height: 100%;
+		gap: 40px;
+		font-size: 18px;
+		align-items: center;
+	}
+
+	&__item {
+		position: relative;
+		list-style: none;
+		font-weight: bold;
+		color: $color-purple;
+
+		&--active {
+			font-weight: bold;
+			color: $color-pink;
+		}
+	}
+
+	&__item:hover {
+		color: $color-pink;
+	}
+
+	&__item:hover .#{$block-name}__sub-list,
+	&__item--active:hover .#{$block-name}__sub-list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		background-color: $color-white;
+	}
+
+	&__sub-list {
+		display: none;
+		position: absolute;
+		width: 200px;
+		padding: 15px 10px;
+	}
+
+	&__sub-item {
+		font-weight: normal;
+		color: $color-black;
+
+		&--active {
+			font-weight: normal;
+			color: $color-pink;
+		}
+	}
+
+	&__sub-item:hover {
+		color: $color-pink;
+	}
+}

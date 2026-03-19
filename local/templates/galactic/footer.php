@@ -2,8 +2,7 @@
 
     <?=
     \TAO::frontend()->renderBlock(
-        'common/footer',
-        []
+        'common/footer'
     )
     ?>
 </body>

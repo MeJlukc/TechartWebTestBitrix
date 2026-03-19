@@ -565,11 +565,11 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .footer {
+    /* .footer {
         margin-inline: 0;
         padding-inline: var(--base-page-inline-indent);
         padding-block: 40px;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
@@ -705,8 +705,8 @@ body {
         height: 16px;
     }
 
-    .footer {
+    /* .footer {
         padding-block: 20px;
         margin-top: 40px;
-    }
+    } */
 }
