@@ -1,0 +1,11 @@
+@use "style" as *;
+
+$block-name: "b-list";
+
+.#{$block-name} {
+	display: flex;
+	justify-content: space-between;
+	margin-inline: $base-page-inline-indent;
+	gap: 80px 40px;
+	flex-wrap: wrap;
+}

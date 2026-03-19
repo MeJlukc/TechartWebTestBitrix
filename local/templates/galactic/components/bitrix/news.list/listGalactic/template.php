@@ -1,43 +1,23 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
 ?>
+	<?=
+	\TAO::frontend()->renderBlock(
+	'common/title',
+	[
+	'title' => $arResult['TITLE'],
+	]
+	)
+	?>
 
-	<section class="news">
-		<?=
-		\TAO::frontend()->renderBlock(
-		'common/title',
-		[
-		'title' => $arResult['TITLE'],
-		]
-		)
-		?>
-
-		<div class="news__list">
-			<?php
-			foreach ($arResult["ITEMS"] as $arItem) {
-			?>
-				<?=
-				\TAO::frontend()->renderBlock(
-					'common/card',
-					[
-						'date' => $arItem['ACTIVE_FROM'],
-					 	'title' => $arItem['NAME'],
-						'text' => $arItem['PREVIEW_TEXT'],
-						'link' => $arItem['ID']
-					]
-				)
-				?>
-			<?php
-			}
-			?>
-		</div>
-		<?php if (empty($arResult["ITEMS"])) { ?>
-		<div class="no-news-found">
-			<h3 class="no-news-found__title">По вашему запросу ничего не найдено</h3>
-			<a class="button no-news-found__button" href="/news/">Сбросить фильтр</a>
-		</div>
-		<?php } ?>
-	</section>
+	<?=
+	\TAO::frontend()->renderBlock(
+	'common/list',
+	[
+	'arResult' => $arResult,
+	]
+	)
+	?>
 
 <?php
 if($arParams["DISPLAY_BOTTOM_PAGER"]) {
