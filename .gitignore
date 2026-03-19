@@ -5,3 +5,5 @@
 /bitrix/html_pub/*
 /bitrix/modules/*.log
 *.log
+local/cache/
+local/templates/galactic/builds/dev/
