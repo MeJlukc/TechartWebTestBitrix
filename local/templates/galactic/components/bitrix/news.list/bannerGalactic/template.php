@@ -9,7 +9,7 @@ $this->setFrameMode(true);
 [
 'title' => $arResult["BANNER_INFO"]['TITLE'],
 'text' => $arResult["BANNER_INFO"]['TEXT'],
-'background' => $arResult["ITEMS"][0]['PREVIEW_PICTURE']["SRC"],
+'background' => $arResult["BANNER_INFO"]['BACKGROUND'],
 ]
 )
 ?>
