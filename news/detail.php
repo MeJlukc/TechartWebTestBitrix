@@ -1,13 +1,22 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 
 <?php
+$APPLICATION->IncludeComponent("bitrix:breadcrumb", "template1", Array(
+	"START_FROM" => "0",
+		"PATH" => "",
+		"SITE_ID" => "s1",
+	),
+	false
+);
+
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.detail", 
 	"detailGalactic", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_ELEMENT_CHAIN" => "N",
-		"ADD_SECTIONS_CHAIN" => "Y",
+		"ADD_ELEMENT_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -68,5 +77,6 @@ $APPLICATION->IncludeComponent(
 	false
 );
 ?>
+
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

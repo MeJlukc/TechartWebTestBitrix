@@ -9,4 +9,18 @@ $block-name: "b-button";
 		background-color: $color-brand;
 		color: $color-white;
 	}
+
+	&--arrow-left {
+		&::before {
+			content: "";
+			width: 25px;
+			height: 25px;
+			background: url("/local/templates/galactic/images/arrow-left-brand.svg") center/contain no-repeat;
+		}
+
+		&:hover::before {
+			background: url("/local/templates/galactic/images/arrow-right-white.svg") center/contain no-repeat;
+			transform: scale(-1);
+		}
+	}
 }

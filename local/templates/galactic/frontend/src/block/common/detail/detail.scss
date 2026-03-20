@@ -43,15 +43,3 @@ $block-name: "b-detail";
 		width: 90%;
 	}
 }
-
-.b-button::before {
-	content: "";
-	width: 25px;
-	height: 25px;
-	background: url("/local/templates/galactic/images/arrow-left-brand.svg") center/contain no-repeat;
-}
-
-.b-button:hover::before {
-	background: url("/local/templates/galactic/images/arrow-right-white.svg") center/contain no-repeat;
-	transform: scale(-1);
-}

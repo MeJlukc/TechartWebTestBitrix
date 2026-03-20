@@ -19,6 +19,7 @@
             $renderer->renderBlock(
                 'common/button', 
                 [
+                'modificator' => 'arrow-left',
                 'content' => 'Назад к новостям',
                 'path' => $href,
                 ],

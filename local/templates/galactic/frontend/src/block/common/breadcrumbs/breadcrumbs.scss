@@ -1,0 +1,11 @@
+@use "style" as *;
+
+$block-name: "b-breadcrumbs";
+
+.#{$block-name} {
+	padding: 72px $base-page-inline-indent 22px;
+
+	&__current-element {
+		color: $color-gray;
+	}
+}
