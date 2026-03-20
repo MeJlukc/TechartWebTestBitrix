@@ -1,0 +1,9 @@
+@use "style" as *;
+
+$block-name: "b-tags";
+
+.#{$block-name} {
+	&__title {
+		color: $color-brand;
+	}
+}
