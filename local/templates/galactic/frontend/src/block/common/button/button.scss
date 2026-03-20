@@ -4,4 +4,9 @@ $block-name: "b-button";
 
 .#{$block-name} {
 	@include button;
+
+	&:hover {
+		background-color: $color-brand;
+		color: $color-white;
+	}
 }
