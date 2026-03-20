@@ -9,6 +9,14 @@
         </span>
         {!!
             $renderer->renderBlock(
+                'common/tags', 
+                [
+                'content' => $categories,
+                ],
+            )
+        !!}
+        {!!
+            $renderer->renderBlock(
                 'common/button', 
                 [
                 'content' => 'Назад к новостям',
