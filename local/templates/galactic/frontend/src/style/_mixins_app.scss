@@ -16,6 +16,8 @@
 	font-weight: 600;
 	background-color: $color-white;
 	transition: 0.3s;
+	width: fit-content;
+	height: 54px;
 }
 
 @mixin date {

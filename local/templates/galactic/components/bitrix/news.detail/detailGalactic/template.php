@@ -43,5 +43,19 @@ if ($arResult['PROPERTIES']['ONLY_AUTH']['VALUE_XML_ID'] == 'Y' && !$USER->IsAut
     </div>
 </section>
 
+
+<?=
+\TAO::frontend()->renderBlock(
+	'common/detail',
+	[
+	'date' => $arResult["ACTIVE_FROM"],
+    'title' => $arResult["PREVIEW_TEXT"],
+    'content' => $arResult["DETAIL_TEXT"],
+    'image_path' => $arResult["DETAIL_PICTURE"]["SRC"],
+    'href' => $arResult["LIST_PAGE_URL"],
+	]
+)
+?>
+
 <?php
 } ?>    
