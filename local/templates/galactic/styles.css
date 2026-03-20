@@ -205,7 +205,7 @@ body {
     last_news / Последняя новость
 ===================== */
 
-.last-news {
+/* .last-news {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -226,7 +226,7 @@ body {
 .last-news__text {
     font-size: var(--font-size-content-xl);
     line-height: var(--line-height-content);
-}
+} */
 
 
 /* =====================
