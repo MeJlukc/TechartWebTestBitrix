@@ -1,0 +1,45 @@
+@use "style" as *;
+
+$block-name: "b-detail";
+
+.#{$block-name} {
+	display: flex;
+	padding-inline: $base-page-inline-indent;
+
+	&__info-container {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		gap: 40px;
+	}
+
+	&__date {
+		@include date;
+	}
+
+	&__title {
+		font-size: $font-size-h2;
+		line-height: $line-height-title;
+		font-weight: 600;
+		color: $color-brand;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+		font-size: $font-size-content;
+		line-height: $line-height-content;
+	}
+
+	&__image-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+	}
+
+	&__image {
+		width: 90%;
+	}
+}
