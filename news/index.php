@@ -1,4 +1,7 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+$PAGEN_1 = $_GET['PAGEN_1'] ?? null;
+?>
 
 <?php
 use Bitrix\Main\Loader;

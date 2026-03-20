@@ -29,6 +29,7 @@ $block-name: "b-pagination";
 			height: 54px;
 		}
 
+		&--active,
 		&:hover {
 			background-color: $color-brand;
 			color: $color-white;

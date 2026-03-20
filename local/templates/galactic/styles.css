@@ -304,7 +304,7 @@ body {
     Pagination / Пагинация
 ===================== */
 
-.pagination__list {
+/* .pagination__list {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -347,7 +347,7 @@ body {
 .pagination__arrow--before {
     background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
     /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
-    transform: scale(-1);
+    /* transform: scale(-1);
 }
 
 .pagination__arrow--next {
@@ -357,7 +357,7 @@ body {
 .pagination__link--before:hover .pagination__arrow--before,
 .pagination__link--next:hover .pagination__arrow--next {
     filter: brightness(0) invert(1);
-}
+} */ */
 
 
 /* =====================
