@@ -18,6 +18,7 @@ if ($arResult['PROPERTIES']['ONLY_AUTH']['VALUE_XML_ID'] == 'Y' && !$USER->IsAut
 	'common/title',
 	[
     'title' => $arResult["NAME"],
+    'modificators' => 'detail-page',
 	]
 )
 ?>

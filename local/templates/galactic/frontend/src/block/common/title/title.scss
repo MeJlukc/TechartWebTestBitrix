@@ -3,7 +3,11 @@
 $block-name: "b-title";
 
 .#{$block-name} {
-	margin-inline: $base-page-inline-indent;
+	margin: 0 $base-page-inline-indent;
 	padding-block: 55px;
 	font-size: 4rem;
+
+	&--detail-page {
+		padding-block: 20px 63px;
+	}
 }
