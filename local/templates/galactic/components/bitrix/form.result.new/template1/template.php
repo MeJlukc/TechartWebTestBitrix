@@ -74,6 +74,13 @@ if ($arResult["isFormNote"] == "Y") {
 		</label>
 	</div>
 
+	<div class="checkbox-group">
+		<label>
+			<input type="checkbox">
+			Я подтвержаю свое согласие с политикой обработки персональных данных.
+		</label>
+	</div>
+
 	<div class="submit-group">
 		<input 
 		class="button feedback-form__button"

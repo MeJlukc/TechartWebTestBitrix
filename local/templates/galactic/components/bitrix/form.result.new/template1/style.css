@@ -19,8 +19,10 @@ form {
 
 label {
 	display: flex;
-	flex-direction: column;
+	align-items: center;
+	gap: 10px;
 }
+
 .feedback-success {
 	display: flex;	
 	flex-direction: column;
@@ -47,6 +49,10 @@ label {
 input, select {
 	height: 30px;
 	width: 330px;
+}
+
+input[type=checkbox] {
+	width: 20px;
 }
 
 .feedback-form__button {
