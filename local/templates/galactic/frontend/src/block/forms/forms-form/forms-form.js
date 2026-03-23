@@ -32,7 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 
-		if ((emailValue.length < 3) && !phoneField.inputmask.isComplete()) {
+		let isStartedPhone = phoneField.value.replace(/[^0-9]/g, '').length > 1;
+		let isCompletePhone = phoneField.inputmask.isComplete();
+
+		if (isStartedPhone && !isCompletePhone) {
+			errors.push('<p>Заполните номер телефона полностью</p>');
+		} else if ((emailValue.length < 3) && !isCompletePhone) {
 			errors.push('<p>Необходимо заполнить email или номер телефона</p>');
 		}
 
