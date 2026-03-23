@@ -4,9 +4,7 @@
 	{{ $title }}
 </h2>
 
-@if ($have_errors)
-	{!! $error_messages !!}
-@endif
+<div class="{{ $block->elem('errors') }}"></div>
 
 @foreach ($fields as $field)
 	{!! $field !!}

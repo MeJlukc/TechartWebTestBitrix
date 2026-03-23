@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const form = document.querySelector('.b-forms-form');
+	const errorContainer = document.querySelector('.b-forms-form__errors');
 
 	if (!form) {
 		return;
 	}
 
-	form.addEventListener('submit', () => {
+	form.addEventListener('submit', (event) => {
+		errorContainer.textContent = '';
 
 		const fields = [
 			{ name: 'Имя', value: form.elements['form_text_1'].value.trim() },	
@@ -20,17 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		for (let { name, value } of fields) {
 			if (value.length < 3) {
-				errors.push(`Заполните обязательное поле "${name}"`);
+				errors.push(`<p>Заполните обязательное поле "${name}"</p>`);
 			}
 		}
 
 		if (!checkbox.checked) {
-			errors.push('Необходимо согласиться с политикой обработки персональных данных');
+			errors.push('<p>Необходимо согласиться с политикой обработки персональных данных</p>');
 		}
 
 		if (errors.length > 0) {
-			
-			alert(errors.join('\n'))
+			event.preventDefault();
+
+			errorContainer.innerHTML = errors.join('\n');
 			return;
 		}
 
