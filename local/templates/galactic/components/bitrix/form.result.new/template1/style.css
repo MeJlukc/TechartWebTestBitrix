@@ -22,6 +22,7 @@ label {
 	align-items: center;
 	gap: 10px;
 }
+*/
 
 .feedback-success {
 	display: flex;	
@@ -32,7 +33,6 @@ label {
 	gap: 30px;
 }
 
-.feedback-form__button,
 .feedback-success__button {
 	height: 54px;
 	width: fit-content;
@@ -42,20 +42,3 @@ label {
 	cursor: pointer;
 }
 
-.star {
-	color: red;
-}
-
-input, select {
-	height: 30px;
-	width: 330px;
-}
-
-input[type=checkbox] {
-	width: 20px;
-}
-
-.feedback-form__button {
-	height: 54px;
-	width: auto;
-} */
