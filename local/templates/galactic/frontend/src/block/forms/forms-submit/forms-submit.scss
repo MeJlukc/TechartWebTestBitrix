@@ -1,0 +1,11 @@
+@use "style" as *;
+
+$block-name: "b-forms-submit";
+
+.#{$block-name} {
+	height: 45px;
+	width: fit-content;
+	padding: 10px 20px;
+	border: 1px solid $color-gray;
+	border-radius: 20px;
+}

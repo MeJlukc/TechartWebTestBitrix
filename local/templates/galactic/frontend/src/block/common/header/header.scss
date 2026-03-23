@@ -5,6 +5,7 @@ $block-name: "b-header";
 .#{$block-name} {
 	display: flex;
 	justify-content: space-between;
+	height: 157px;
 	padding-inline: 200px;
 	padding-block: 40px;
 	border-bottom: 1px solid $color-black;

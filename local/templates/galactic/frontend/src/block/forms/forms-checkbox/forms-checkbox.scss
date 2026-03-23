@@ -1,0 +1,9 @@
+@use "style" as *;
+
+$block-name: "b-forms-checkbox";
+
+.#{$block-name} {
+	display: flex;
+	align-items: start;
+	gap: 5px;
+}

@@ -1,4 +1,7 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+\TAO::frontendCss('forms');
+\TAO::frontendJs('forms');
+?>
 
 <?php
 $APPLICATION->setTitle("Форма обратной связи");

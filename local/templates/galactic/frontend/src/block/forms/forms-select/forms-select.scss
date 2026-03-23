@@ -1,0 +1,14 @@
+@use "style" as *;
+
+$block-name: "b-forms-select";
+
+.#{$block-name} {
+	display: flex;
+	align-items: start;
+	gap: 10px;
+
+	&__label-text {
+		display: flex;
+		gap: 1px;
+	}
+}
