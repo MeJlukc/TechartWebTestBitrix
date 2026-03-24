@@ -13,7 +13,7 @@ $block-name: "b-map";
 	}
 
 	&__switcher-button {
-		width: 100px;
+		width: 200px;
 		border: 1px solid $color-purple;
 		border-radius: 10px;
 		background-color: transparent;
@@ -36,12 +36,16 @@ $block-name: "b-map";
 		height: 50vh;
 	}
 
-	&__info {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		margin-block: 30px;
-		width: 100%;
+	&__item {
+		display: none;
+
+		&--active {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			margin-block: 30px;
+			width: 100%;
+		}
 	}
 
 	&__description {
