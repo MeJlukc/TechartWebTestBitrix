@@ -8,12 +8,8 @@
     <div id="map" class="{{ $block->elem('container') }}"></div>
 
     <div class="{{ $block->elem('info') }}">
-        <h3 class="{{ $block->elem('title') }}">
-            {{ $content['tula']['title'] }}
-        </h3>
-        @foreach ($content['tula']['description'] as $item)
-            <span class="{{ $block->elem('item') }}">{!! $item !!}</span>
-        @endforeach
+        <h3 class="{{ $block->elem('title') }}"></h3>
+        <span class="{{ $block->elem('description') }}"></span>
     </div>
 
 </div>

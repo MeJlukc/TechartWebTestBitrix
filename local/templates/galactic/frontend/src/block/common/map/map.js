@@ -6,8 +6,10 @@ async function initMap() {
 
 	const switcherBlock = document.querySelector('.b-map__switcher');
 	const switcherButtons = document.querySelectorAll('.b-map__switcher-button');
+	const activeButtonClass = "b-map__switcher-button--active";
 	const content = JSON.parse(switcherBlock.dataset.content);
-	const infoBlock = document.querySelector('.b-map__info');
+	const infoBlockTitle = document.querySelector('.b-map__title');
+	const infoBlockDescription = document.querySelector('.b-map__description');
 
 	const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = window.ymaps3;
 	const {YMapDefaultMarker} = await window.ymaps3.import('@yandex/ymaps3-markers@0.0.1');
@@ -36,13 +38,16 @@ async function initMap() {
 
 	map.addChild(marker);
 
-	infoBlock.innerHTML = `<h3>${content.tula.title}</h3>${content.tula.description.join('<br>')}`;
+	infoBlockTitle.innerHTML = `<h3>${content.tula.title}</h3>`;
+	infoBlockDescription.innerHTML = content.tula.description.join('<br>');
 
+	switcherButtons[0].classList.add(activeButtonClass);
 
-	function changeCity(city) {
+	function changeCity(city, clickedButton) {
 		const { coordinates, title, description} = content[city];
 
-		infoBlock.innerHTML = `<h3>${title}</h3>${description.join('<br>')})}`;
+		infoBlockTitle.innerHTML = `<h3>${title}</h3>`;
+		infoBlockDescription.innerHTML = description.join('<br>');
 
 		map.update({
 			location: { center: coordinates, zoom: 15 }
@@ -57,11 +62,14 @@ async function initMap() {
 		});
 
 		map.addChild(marker);
+
+		switcherButtons.forEach((button) => button.classList.remove(activeButtonClass));
+		clickedButton.classList.add(activeButtonClass);
 	}
 
 	switcherButtons.forEach((button) => {
 		button.addEventListener('click', () => {
-			changeCity(button.dataset.city)
+			changeCity(button.dataset.city, button)
 		})
 	})
 }
