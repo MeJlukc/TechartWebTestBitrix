@@ -13,10 +13,12 @@ $APPLICATION->SetTitle("");
 )
 ?>
 
-<section class="page-in-develop">
-    <h1 class="page-in-develop__tile">Страница находится в разработке</h1>
-    <a href="/" class="button page-in-develop__button">На главную</a>
-</section>
+<div id="map" style="width: auto; height: 50vh; margin-inline: 10.42vw"></div>
+
+<span style="margin: 30px 10.42vw">
+    300041, г. Тула, ул. Ф. Смирнова ул., д. 28, оф. 601-602, 701, 703-707, 712 <br>
+    Тел. / Факс: (4872) 250-450, 57-05-01
+</span>
 
 <?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
