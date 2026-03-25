@@ -7,6 +7,7 @@ $APPLICATION->SetTitle("Галактический вестник")
     <h1 class="home-page__title">Вы на главной</h1>
     <a href="/news/" class="button home-page__button">К новостям</a>
     <a href="/contacts/" class="button home-page__button">Форма обратной связи</a>
+    <a href="/personal/basket.php" class="button home-page__button">Корзина</a>
     <a href="/test/" class="button home-page__button">Тестовая страница</a>
 </section>
 
