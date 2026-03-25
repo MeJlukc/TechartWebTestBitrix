@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Книги");
 $APPLICATION->SetTitle("");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog", 
-	"template1", 
-	array(
+	"bitrix:catalog",
+	"template1",
+	Array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
@@ -26,26 +26,17 @@ $APPLICATION->SetTitle("");
 		"COMPATIBLE_MODE" => "N",
 		"CONVERT_CURRENCY" => "N",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
-		"DETAIL_ADD_TO_BASKET_ACTION" => array(
-			0 => "BUY",
-			1 => "ADD",
-		),
-		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array(
-			0 => "BUY",
-		),
+		"DETAIL_ADD_TO_BASKET_ACTION" => array("BUY","ADD"),
+		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array("BUY"),
 		"DETAIL_BACKGROUND_IMAGE" => "-",
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array(
-			0 => "POPUP",
-			1 => "MAGNIFIER",
-		),
+		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP","MAGNIFIER"),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(),
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
@@ -67,7 +58,7 @@ $APPLICATION->SetTitle("");
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"FILTER_NAME" => "",
-		"FILTER_VIEW_MODE" => "HORIZONTAL",
+		"FILTER_VIEW_MODE" => "VERTICAL",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
 		"GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
 		"GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
@@ -90,14 +81,8 @@ $APPLICATION->SetTitle("");
 		"IBLOCK_TYPE" => "books",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(
-			0 => "GENRE",
-			1 => "BOOKS_BINDING",
-		),
-		"LABEL_PROP_MOBILE" => array(
-			0 => "GENRE",
-			1 => "BOOKS_BINDING",
-		),
+		"LABEL_PROP" => array("GENRE","BOOKS_BINDING","BEST_SELLER"),
+		"LABEL_PROP_MOBILE" => array("GENRE","BOOKS_BINDING"),
 		"LABEL_PROP_POSITION" => "top-left",
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
@@ -138,9 +123,7 @@ $APPLICATION->SetTitle("");
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "30",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRICE_CODE" => array(
-			0 => "BASE",
-		),
+		"PRICE_CODE" => array("BASE"),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
@@ -209,13 +192,8 @@ $APPLICATION->SetTitle("");
 		"USE_PRODUCT_QUANTITY" => "Y",
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => "template1",
-		"VARIABLE_ALIASES" => array(
-			"ELEMENT_ID" => "ELEMENT_ID",
-			"SECTION_ID" => "SECTION_ID",
-		)
-	),
-	false
+		"VARIABLE_ALIASES" => Array("ELEMENT_ID"=>"ELEMENT_ID","SECTION_ID"=>"SECTION_ID")
+	)
 );?><?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 ?>
