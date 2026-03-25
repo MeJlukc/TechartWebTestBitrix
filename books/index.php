@@ -44,6 +44,8 @@ $APPLICATION->SetTitle("");
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
@@ -64,7 +66,8 @@ $APPLICATION->SetTitle("");
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"FILTER_HIDE_ON_MOBILE" => "N",
-		"FILTER_VIEW_MODE" => "VERTICAL",
+		"FILTER_NAME" => "",
+		"FILTER_VIEW_MODE" => "HORIZONTAL",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
 		"GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
 		"GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
@@ -90,7 +93,6 @@ $APPLICATION->SetTitle("");
 		"LABEL_PROP" => array(
 			0 => "GENRE",
 			1 => "BOOKS_BINDING",
-            2 => "AUTHORS"
 		),
 		"LABEL_PROP_MOBILE" => array(
 			0 => "GENRE",
@@ -109,6 +111,7 @@ $APPLICATION->SetTitle("");
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+		"LIST_PROPERTY_CODE_MOBILE" => "",
 		"LIST_SHOW_SLIDER" => "Y",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
@@ -197,7 +200,7 @@ $APPLICATION->SetTitle("");
 		"USE_COMPARE" => "N",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_GIFTS_DETAIL" => "Y",
 		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "Y",
 		"USE_GIFTS_SECTION" => "Y",
@@ -207,10 +210,6 @@ $APPLICATION->SetTitle("");
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_STORE" => "N",
 		"COMPONENT_TEMPLATE" => "template1",
-		"LIST_PROPERTY_CODE_MOBILE" => array(
-		),
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
 		"VARIABLE_ALIASES" => array(
 			"ELEMENT_ID" => "ELEMENT_ID",
 			"SECTION_ID" => "SECTION_ID",

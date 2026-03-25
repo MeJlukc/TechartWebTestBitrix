@@ -51,7 +51,7 @@ if ('Y' == $arParams['SHOW_PARENT_NAME'] && 0 < $arResult['SECTION']['ID'])
 	$this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
 	?><h1
-		class="<? echo $arCurView['TITLE']; ?>"
+		class="<? echo $arCurView['TITLE']; ?>"	
 		id="<? echo $this->GetEditAreaId($arResult['SECTION']['ID']); ?>"
 	><a href="<? echo $arResult['SECTION']['SECTION_PAGE_URL']; ?>"><?
 		echo (
