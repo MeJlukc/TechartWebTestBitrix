@@ -204,6 +204,15 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 		}
 		?>
 		<!-- items-container -->
+		<?=
+		\TAO::frontend()->renderBlock(
+			'common/books-section',
+			[
+				'arResult' => $arResult,
+				'params' => $generalParams + $itemParameters[$item['ID']]
+			]
+		)
+		?>
 		<?
 		foreach ($arResult['ITEM_ROWS'] as $rowData)
 		{

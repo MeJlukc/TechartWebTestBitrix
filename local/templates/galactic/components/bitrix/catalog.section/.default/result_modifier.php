@@ -47,3 +47,14 @@ if (!empty($allAuthorIds)) {
         }
     }
 }
+
+//
+
+foreach ($arResult['ITEMS'] as &$arItem) { 
+
+    if (isset($arItem['PROPERTIES']['BEST_SELLER']) && $arItem['PROPERTIES']['BEST_SELLER']['VALUE'] === 'Да') {
+        
+        $arItem['PROPERTIES']['BEST_SELLER']['VALUE'] = $arItem['PROPERTIES']['BEST_SELLER']['NAME'];
+    }
+}
+unset($arItem);

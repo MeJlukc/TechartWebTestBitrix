@@ -1,0 +1,12 @@
+@use "style" as *;
+
+$block-name: "b-books-section";
+
+.#{$block-name} {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-inline: 15px;
+	}
+}
