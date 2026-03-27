@@ -14,6 +14,53 @@ $block-name: "b-books-item";
 	&:hover {
 		position: absolute;
 		top: 0;
-		height: 850px;
+		height: 820px;
+	}
+
+	&:hover .#{$block-name}__info-container {
+		display: block;
+	}
+
+	&__image-title {
+		font-size: 18px;
+		font-weight: 700;
+		color: #3f3f3f;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&__price-container {
+		font-size: 18px;
+		font-weight: 700;
+		color: #3f3f3f;
+	}
+
+	&__info-container {
+		display: none;
+	}
+
+	&__amount-container {
+		display: flex;
+		gap: 5px;
+	}
+
+	&__amount-field {
+		width: 40px;
+	}
+
+	&__amount-field-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 22px;
+		width: 22px;
+		background-color: #cecbcb;
+		border-radius: 15%;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }

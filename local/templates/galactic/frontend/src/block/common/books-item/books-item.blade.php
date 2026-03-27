@@ -43,9 +43,9 @@
 	</span>
 	@endif
 
-	<div class="{{ $block->elem('image-title') }} product-item-title">
+	<div class="{{ $block->elem('image-title') }}">
 		@if ($itemHasDetailUrl)
-		<a href="{{ $item['DETAIL_PAGE_URL'] }}" title="{{ $productTitle }}">
+		<a class="{{ $block->elem('image-title') }}" href="{{ $item['DETAIL_PAGE_URL'] }}" title="{{ $productTitle }}">
 		@endif
 		{!! $productTitle !!}
 		@if ($itemHasDetailUrl)
@@ -53,26 +53,28 @@
 		@endif
 	</div>
 
-    <div class="{{ $block->elem('price-container') }} product-item-price-container" data-entity="price-block">
-        <span class="{{ $block->elem('price-old') }} product-item-price-old" id="{{ $itemIds['PRICE_OLD'] }}" style="display: none;"></span>
+    <div class="{{ $block->elem('price-container') }}" data-entity="price-block">
+        <span class="{{ $block->elem('price-old') }}" id="{{ $itemIds['PRICE_OLD'] }}" style="display: none;"></span>
 
-        <span class="{{ $block->elem('price-current') }} product-item-price-current" id="{{ $itemIds['PRICE'] }}">
+        <span class="{{ $block->elem('price-current') }}" id="{{ $itemIds['PRICE'] }}">
             {!! $item['ITEM_PRICES'][0]['PRINT_PRICE'] !!}
         </span>
     </div>     
 
-    <div class="{{ $block->elem('info-container')->mod('hidden') }} product-item-info-container product-item-hidden" data-entity="quantity-block">
-        <div class="{{ $block->elem('amount') }} product-item-amount">
-            <div class="{{ $block->elem('amount-container') }} product-item-amount-field-container">
-                <span class="{{ $block->elem('amount-field-btn')->mod('minus') }} product-item-amount-field-btn-minus no-select" id="{{ $itemIds['QUANTITY_DOWN'] }}"></span>
+    <div class="{{ $block->elem('info-container')->mod('hidden') }}" data-entity="quantity-block">
+        <div class="{{ $block->elem('amount') }}">
+            <div class="{{ $block->elem('amount-container') }}">
+                <span class="{{ $block->elem('amount-field-btn')->mod('minus') }} no-select" id="{{ $itemIds['QUANTITY_DOWN'] }}">-</span>
                 
                 <input class="{{ $block->elem('amount-field') }} product-item-amount-field" id="{{ $itemIds['QUANTITY'] }}" type="number"
                     name="{{ $arParams['PRODUCT_QUANTITY_VARIABLE'] }}"
                     value="{!! $measureRatio !!}">
                     
-                <span class="{{ $block->elem('amount-field-btn')->mod('plus') }} product-item-amount-field-btn-plus no-select" id="{{ $itemIds['QUANTITY_UP'] }}"></span>
+                <span class="{{ $block->elem('amount-field-btn')->mod('plus') }} no-select" id="{{ $itemIds['QUANTITY_UP'] }}">+</span>
                 
-                <span class="{{ $block->elem('amount-description-container') }} product-item-amount-description-container">
+                <br>
+
+                <span class="{{ $block->elem('amount-description-container') }}">
                     <span id="{{ $itemIds['QUANTITY_MEASURE'] }}">{{ $item['ITEM_MEASURE']['TITLE'] }}</span>
                     <span id="{{ $itemIds['PRICE_TOTAL'] }}"></span>
                 </span>
@@ -80,7 +82,7 @@
         </div>
     </div>
 
-    <div class="{{ $block->elem('info-container')->mod('hidden') }} product-item-info-container product-item-hidden" data-entity="buttons-block">
+    <div class="{{ $block->elem('info-container')->mod('hidden') }}" data-entity="buttons-block">
         @if ($actualItem['CAN_BUY'])
             <div class="{{ $block->elem('button-container') }} product-item-button-container" id="{{ $itemIds['BASKET_ACTIONS'] }}">
                 <a class="{{ $block->elem('button') }} btn btn-default {{ $buttonSizeClass }}" id="{{ $itemIds['BUY_LINK'] }}"
