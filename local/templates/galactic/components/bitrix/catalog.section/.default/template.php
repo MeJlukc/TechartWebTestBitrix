@@ -187,14 +187,9 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 		$areaIds = [];
 		$itemParameters = [];
 
-		foreach ($arResult['ITEMS'] as &$item)
+		foreach ($arResult['ITEMS'] as $item)
 		{
 			$uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
-			$areaId = $this->GetEditAreaId($uniqueId);
-			$obName = 'ob'.preg_replace("/[^a-zA-Z0-9_]/", "x", $areaId);
-
-			$item['AREA_ID'] = $this->GetEditAreaId($uniqueId); 
-
 			$areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
 			$this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
 			$this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
@@ -206,79 +201,7 @@ if (!isset($arParams['HIDE_SECTION_DESCRIPTION']) || $arParams['HIDE_SECTION_DES
 					: $arParams['~MESS_NOT_AVAILABLE']
 				),
 			];
-
-			$itemIds = [
-				'ID' => $areaId,
-				'PICT' => $areaId.'_pict',
-				'SECOND_PICT' => $areaId.'_secondpict',
-				'PICT_SLIDER' => $areaId.'_pict_slider',
-				'QUANTITY' => $areaId.'_quantity',
-				'QUANTITY_DOWN' => $areaId.'_quant_down',
-				'QUANTITY_UP' => $areaId.'_quant_up',
-				'PRICE' => $areaId.'_price',
-				'PRICE_OLD' => $areaId.'_price_old',
-				'PRICE_TOTAL' => $areaId.'_price_total',
-				'BUY_LINK' => $areaId.'_buy_link',
-				'BASKET_ACTIONS' => $areaId.'_basket_actions',
-				'NOT_AVAILABLE_MESS' => $areaId.'_not_avail',
-			];
-
-    		$price = $item['ITEM_PRICES'][$item['ITEM_PRICE_SELECTED']] ?? null;
-
-			$jsParams = [
-				'PRODUCT_TYPE' => $item['PRODUCT']['TYPE'],
-				'SHOW_QUANTITY' => $arParams['USE_PRODUCT_QUANTITY'],
-				'SHOW_ADD_BASKET_BTN' => false,
-				'SHOW_BUY_BTN' => true,
-				'SHOW_ABSENT' => true,
-				'SHOW_OLD_PRICE' => $arParams['SHOW_OLD_PRICE'] === 'Y',
-				'ADD_TO_BASKET_ACTION' => $arParams['ADD_TO_BASKET_ACTION'],
-				'SHOW_CLOSE_POPUP' => $arParams['SHOW_CLOSE_POPUP'] === 'Y',
-
-				'PRODUCT' => [
-					'ID' => $item['ID'],
-					'NAME' => $item['NAME'],
-					'DETAIL_PAGE_URL' => $item['DETAIL_PAGE_URL'],
-					'CAN_BUY' => $item['CAN_BUY'],
-					'CHECK_QUANTITY' => $item['CHECK_QUANTITY'],
-					'MAX_QUANTITY' => $item['CATALOG_QUANTITY'],
-					'STEP_QUANTITY' => $item['ITEM_MEASURE_RATIOS'][$item['ITEM_MEASURE_RATIO_SELECTED']]['RATIO'],
-					'ITEM_PRICES' => $item['ITEM_PRICES'],
-					'ITEM_PRICE_SELECTED' => $item['ITEM_PRICE_SELECTED'],
-				],
-
-				'BASKET' => [
-					'ADD_PROPS' => $arParams['ADD_PROPERTIES_TO_BASKET'] === 'Y',
-					'QUANTITY' => $arParams['PRODUCT_QUANTITY_VARIABLE'],
-					'PROPS' => $arParams['PRODUCT_PROPS_VARIABLE'],
-					'BASKET_URL' => $arParams['~BASKET_URL'],
-					'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
-					'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE'],
-				],
-
-				'VISUAL' => [
-					'ID' => $itemIds['ID'],
-					'PICT_ID' => $itemIds['PICT'],
-					'QUANTITY_ID' => $itemIds['QUANTITY'],
-					'QUANTITY_UP_ID' => $itemIds['QUANTITY_UP'],
-					'QUANTITY_DOWN_ID' => $itemIds['QUANTITY_DOWN'],
-					'PRICE_ID' => $itemIds['PRICE'],
-					'PRICE_OLD_ID' => $itemIds['PRICE_OLD'],
-					'PRICE_TOTAL_ID' => $itemIds['PRICE_TOTAL'],
-					'BUY_ID' => $itemIds['BUY_LINK'],
-					'BASKET_ACTIONS_ID' => $itemIds['BASKET_ACTIONS'],
-					'NOT_AVAILABLE_MESS' => $itemIds['NOT_AVAILABLE_MESS'],
-				]
-			];
-
-			$item['ITEM_IDS'] = $itemIds;
-			$item['JS_PARAMS'] = $jsParams;
-			$item['PRICE_DATA'] = $price;
-			$item['OB_NAME'] = $obName;
-
-			$preparedItems[] = $item;
 		}
-		unset($item);
 		?>
 		<!-- items-container -->
 		<?
